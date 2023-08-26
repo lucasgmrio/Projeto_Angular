@@ -6,20 +6,22 @@ import { Oferta } from '../shared/oferta.model';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  providers:[OfertasService]
+  providers: [OfertasService]
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent implements OnInit {
 
-public ofertas : Oferta[] = [];
+  public ofertas: Oferta[] = [];
 
-  constructor(private ofertaService: OfertasService){
+  constructor(private ofertaService: OfertasService) {
   }
 
-  ngOnInit(){
+  ngOnInit() {
 
-   this.ofertas = this.ofertaService.getOfertas()
-
-   console.log(this.ofertas)
+    //  this.ofertas = this.ofertaService.getOfertas()
+    this.ofertaService.getOfertas2()
+      .then((ofertas: Oferta[]) => { this.ofertas = ofertas },
+        (params: any) => { console.log(params) }
+      )
   }
 
 }

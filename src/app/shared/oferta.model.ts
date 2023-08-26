@@ -1,3 +1,5 @@
+import { Imagens } from "./imagem.model";
+
 export class Oferta {
     constructor(
         public id: number,
@@ -7,6 +9,6 @@ export class Oferta {
         public anunciante: string,
         public valor: number,
         public destaque: boolean,
-        public imagens: Array<object>
+        public imagens: Array<Imagens>
     ) {}
 }

@@ -26,7 +26,7 @@ export class OfertasService {
             titulo: "Cozinha Mexicana",
             descricao_oferta: "Almoço ou Jantar com Rodízio Mexicano delicioso.",
             anunciante: "Mexicana",
-            valor: 32.90,
+            valor: 32.50,
             destaque: true,
             imagens: [
                 { url: "/assets/ofertas/2/img1.jpg" },
@@ -42,7 +42,7 @@ export class OfertasService {
             titulo: "Estância das águas",
             descricao_oferta: "Diversão garantida com piscinas, trilhas e muito mais.",
             anunciante: "Estância das águas",
-            valor: 31.90,
+            valor: 69.90,
             destaque: true,
             imagens: [
                 { url: "/assets/ofertas/3/img1.jpg" },
@@ -57,5 +57,25 @@ export class OfertasService {
 
     public getOfertas(): Array<Oferta> {
         return this.ofertas
+    }
+    public getOfertas2(): Promise<Oferta[]> {
+        return new Promise((resolve, reject) => {
+            console.log('passei por aqui')
+
+            let deu_certo = true;
+
+            if (deu_certo) {
+                resolve(this.ofertas)
+
+            } else {
+                reject({ codigo_ero: 404, mensagem_erro: 'Servidor não encontrado' })
+
+            }
+
+
+        })
+
+
+
     }
 }
