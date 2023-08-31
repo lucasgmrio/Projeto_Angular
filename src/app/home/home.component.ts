@@ -19,9 +19,14 @@ export class HomeComponent implements OnInit {
 
     //  this.ofertas = this.ofertaService.getOfertas()
     this.ofertaService.getOfertas2()
-      .then((ofertas: Oferta[]) => { this.ofertas = ofertas },
-        (params: any) => { console.log(params) }
-      )
-  }
+      .then((ofertas: Oferta[]) => { 
 
+        console.log('A função resolve foi resolvida em 3 segundos')
+        this.ofertas = ofertas
+       })
+
+      .catch((params: any) => {
+        console.log(params)
+      })
+  }
 }

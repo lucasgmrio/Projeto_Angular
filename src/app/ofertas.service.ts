@@ -65,10 +65,12 @@ export class OfertasService {
             let deu_certo = true;
 
             if (deu_certo) {
-                resolve(this.ofertas)
 
+                //retorna a função resolve(this.ofertas) após 3 segundos
+               setTimeout(()=>resolve(this.ofertas),3000)
+               
             } else {
-                reject({ codigo_ero: 404, mensagem_erro: 'Servidor não encontrado' })
+                reject({ codigo_ero: 404, mensagem_erro: 'Servidor não encontrado_cath' })
 
             }
 
