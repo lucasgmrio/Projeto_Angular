@@ -15,26 +15,15 @@ public getOfertas(): Promise<any> {
   }
   
 
-    // public getOfertas2(): Promise<Oferta[]> {
-    //     return new Promise((resolve, reject) => {
-    //         console.log('passei por aqui')
 
-    //         let deu_certo = true;
+  public getOfertasPorCategoria(categoria: string): Promise<Oferta[]> {
+    return lastValueFrom(this.httpClient.get<Oferta[]>(`http://localhost:3000/ofertas?categoria=${categoria}`));
+  }
+  
 
-    //         if (deu_certo) {
+//   public getOfertasPorCategoria(categoria:string):Promise<any>{
+//     return lastValueFrom(this.httpClient.get(`http://localhost:3000/ofertas?categoria=${categoria}`));   
 
-    //             //retorna a função resolve(this.ofertas) após 3 segundos
-    //            setTimeout(()=>resolve(this.ofertas),3000)
-               
-    //         } else {
-    //             reject({ codigo_ero: 404, mensagem_erro: 'Servidor não encontrado_cath' })
+//   }
 
-    //         }
-
-
-    //     })
-
-
-
-    // }
 }

@@ -8,6 +8,9 @@ import { RodapeComponent } from './rodape/rodape.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DiversaoComponent } from './diversao/diversao.component';
 import { RestaurantesComponent } from './restaurantes/restaurantes.component';
+import { RouterModule } from '@angular/router';
+import { ROUTES } from './app.routes';
+
 
 
 @NgModule({
@@ -24,7 +27,9 @@ import { RestaurantesComponent } from './restaurantes/restaurantes.component';
     BrowserModule,
     HttpClientModule ,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(ROUTES) // MAPEAMENTO DE ROTAS GLOBAIS 
+    // RouterModule.forChild(ROUTES) // MAPEAMENTO DE ROTAS INTERNAS EM COMPONNTE 
   ],
   providers: [],
   bootstrap: [AppComponent]
